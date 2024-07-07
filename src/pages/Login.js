@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import styled from 'styled-components';
@@ -114,9 +114,11 @@ function Login() {
       }
     };
   
-    if (authenticated) {
+    useEffect(() => {
+      if (authenticated) {
         navigate('/dashboard');
-    }
+      }
+    }, [authenticated, navigate]);
   
   return (
 <Container>
