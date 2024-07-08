@@ -86,7 +86,7 @@ margin-top: 8px;
 margin-right: 7px;
 `;
 
-export const Text = styled.div`
+const Text = styled.div`
 display: flex;
 flex-direction: column;
 color: white;
@@ -103,12 +103,33 @@ span{
 }
 `;
 
-export const ArrowDownIcon = styled.div`
+const ArrowDownIcon = styled.div`
 &:hover{
     transform: scale(1.2);
 }
 `;
 
+const LogOutButton = styled.div`
+    background: rgba(36, 38, 42, 1);
+    color: white; 
+    padding: 10px 20px;
+    margin: 15px 2px; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    transition: background-color 0.3s;
+
+& span{
+    font-family: Euclid Circular B;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+`;
 
 
 function Header() {
@@ -117,6 +138,12 @@ function Header() {
   const ToDashboard = () => {
     navigate('/dashboard');
   };
+
+  const handleLogout = () => {
+    window.localStorage.removeItem("token");
+    navigate('/');
+  };
+
   return (
     <Container>
     <NavbarLogo>
@@ -132,6 +159,9 @@ function Header() {
             </>
           )}
         </BackButton>
+        <div>
+          <LogOutButton onClick={handleLogout}><span>Log Out</span></LogOutButton>
+        </div>
           <NotificationIcon>
             <img src={notification} alt="notification" />
           </NotificationIcon>

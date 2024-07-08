@@ -1,7 +1,7 @@
-import React from 'react'
+import {React, useState} from 'react'
 
 import styled from 'styled-components'
-import Pagelayout from '../layout/Pagelayout';
+import AddAssets from './AddAssets';
 
 export const HeadText = styled.div`
 font-family: Euclid Circular B;
@@ -75,6 +75,9 @@ margin-bottom: 5px;
 cursor: pointer;
 
 & p{
+display: flex;
+justify-content: center;
+align-items: center;
 font-family: Euclid Circular B;
 font-size: 16px;
 font-weight: 400;
@@ -83,29 +86,37 @@ line-height: 24px;
 `;
 
 function Assets() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Pagelayout>
-        <div style={{height:'511px'}}>
+    <>
+      <div style={{ height: '511px' }}>
         <HeadText>Assets</HeadText>
         <AssetsCard>
-        <THead>
+          <THead>
             <HeadItem>Token</HeadItem>
             <HeadItem>Balance</HeadItem>
-        </THead>
-        <TBody>
-        <BodyItem>USDT</BodyItem>
-        <BodyItem>50 USDT</BodyItem>
-        <div><Button><p>Pull</p></Button></div>
-        </TBody>
-        <TBody>
-        <BodyItem>USDC</BodyItem>
-        <BodyItem>50 USDC</BodyItem>
-        <div><Button><p>Pull</p></Button></div>
-        </TBody>
+          </THead>
+          <TBody>
+            <BodyItem>USDT</BodyItem>
+            <BodyItem>50 USDT</BodyItem>
+            <div>
+              <Button onClick={() => setOpen(true)}><p>Pull</p></Button>
+            </div>
+          </TBody>
+          <TBody>
+            <BodyItem>USDC</BodyItem>
+            <BodyItem>50 USDC</BodyItem>
+            <div>
+              <Button onClick={() => setOpen(true)}><p>Pull</p></Button>
+            </div>
+          </TBody>
         </AssetsCard>
-        </div>
-    </Pagelayout>
-  )
+      </div>
+
+      <AddAssets open={open} handleClose={() => { setOpen(false); }} />
+    </>
+  );
 }
 
 export default Assets

@@ -116,6 +116,7 @@ function Login() {
   
     useEffect(() => {
       if (authenticated) {
+        window.localStorage.setItem("token", "key")
         navigate('/dashboard');
       }
     }, [authenticated, navigate]);

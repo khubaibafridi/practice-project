@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import styled from 'styled-components';
-import Pagelayout from '../layout/Pagelayout';
 import Image from '../assets/images/image.png';
 import Copy from '../assets/icons/copy-grey.svg';
 import Export from '../assets/icons/export-grey.svg'
@@ -173,7 +172,7 @@ function Dashboard() {
   };
 
   return (
-    <Pagelayout>
+    <>
       <div style={{display:'flex',flexDirection:'row', gap: '20px'}}>
       <div>
       <HeadText>Overview</HeadText>
@@ -276,7 +275,7 @@ function Dashboard() {
       </tbody>
         </HistoryCard>
       </div>
-    </Pagelayout>
+    </>
   )
 }
 

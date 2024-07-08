@@ -1,7 +1,6 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import Pagelayout from '../layout/Pagelayout'
 
 export const HeadText = styled.div`
 font-family: Euclid Circular B;
@@ -68,7 +67,7 @@ margin-right: 15%;
 
 function Transactions() {
   return (
-    <Pagelayout>
+    <>
         <div style={{height: '520px'}}>
             <HeadText>Transaction History</HeadText>
                 <Container>
@@ -141,7 +140,7 @@ function Transactions() {
                 </Container>
 
         </div>
-    </Pagelayout>
+    </>
   )
 }
 

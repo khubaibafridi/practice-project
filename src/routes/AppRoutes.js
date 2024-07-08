@@ -6,15 +6,20 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import Assets from '../pages/Assets';
 import Transactions from '../pages/Transactions';
+import FormLayout from '../layout/FormLayout';
+import UserRestriction from './UserRestriction';
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={ <Wallet /> } />
       <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/assets" element={<Assets />} />
-      <Route path="/transactions" element={<Transactions />} />
+      <Route path='' element={<FormLayout/>}>
+        <Route path="dashboard" element={<UserRestriction> <Dashboard /> </UserRestriction>} />
+        <Route path="assets" element={<UserRestriction> <Assets /> </UserRestriction>} />
+        <Route path="transactions" element={<UserRestriction> <Transactions /> </UserRestriction>} />
+      </Route>
+
     </Routes>
 
   )
