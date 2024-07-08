@@ -299,7 +299,7 @@ font-size: 16px;
 font-weight: 400;
 line-height: 24px;
 text-align: left;
-color: rgba(230, 230, 234, 1);
+color: rgba(97, 103, 114, 1);
 margin-left: 10px;
 }
 `;
@@ -358,12 +358,12 @@ const AddAssets = ({open, handleClose}) => {
             </MainTextRight>
             <CreateConfirmSegment>
               <CreateSegment>
-                <img src={Add} alt='add circle' />
+                <img style={{cursor: 'pointer'}} src={Add} alt='add circle' />
                 <span>Create</span>
               </CreateSegment>
               <Line />
               <ConfirmSegment>
-                <img src={Tick} alt='tick icon' />
+                <img style={{cursor: 'pointer'}} src={Tick} alt='tick icon' />
                 <span>Confirmed (0 of 1)</span>
               </ConfirmSegment>
             </CreateConfirmSegment>
