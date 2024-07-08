@@ -236,6 +236,27 @@ margin-top: 39px;
 margin-left: 30px;
 `;
 
+const MainTextRight = styled.div`
+display: flex;
+width: 320px;
+height: 63px;
+border-bottom: 1px solid rgba(48, 51, 59, 1);
+box-sizing: border-box;
+padding: 20px;
+align-items: center;
+
+& span{
+font-family: Euclid Circular B;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+color: rgba(230, 230, 234, 1);
+margin-left: 10px;
+}
+`;
+
+
 const CreateConfirmSegment = styled.div`
 display: flex;
 flex-direction: column; 
@@ -331,10 +352,10 @@ const AddAssets = ({open, handleClose}) => {
         </div>
         <div>
           <RightContent>
-            <MainText>
+            <MainTextRight>
               <img src={Refresh} alt='refresh icon' />
               <span>Transaction Status</span>
-            </MainText>
+            </MainTextRight>
             <CreateConfirmSegment>
               <CreateSegment>
                 <img src={Add} alt='add circle' />
